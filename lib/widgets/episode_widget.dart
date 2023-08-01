@@ -49,6 +49,7 @@ class Episode extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
+              Text(episode.id),
               const Icon(
                 Icons.chevron_right_rounded,
                 color: Colors.white,

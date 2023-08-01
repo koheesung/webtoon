@@ -131,7 +131,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           height: 15,
                         ),
                         Text(
-                          '${snapshot.data!.genre} / ${snapshot.data!.age}',
+                          '${snapshot.data!.genre} / ${snapshot.data!.age} }',
                           style: const TextStyle(fontSize: 16),
                         ),
                       ],
@@ -143,6 +143,7 @@ class _DetailScreenState extends State<DetailScreen> {
               const SizedBox(
                 height: 25,
               ),
+              Text(widget.id),
               FutureBuilder(
                 future: episodes,
                 builder: (context, snapshot) {
