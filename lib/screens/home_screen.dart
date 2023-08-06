@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.green,
         title: const Text(
-          "어늘의 웹툰",
+          "오늘의 웹툰",
           style: TextStyle(
             fontSize: 24,
           ),
@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             return Column(
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 10,
                 ),
                 Expanded(child: makeList(snapshot))
               ],
@@ -46,7 +46,11 @@ class HomeScreen extends StatelessWidget {
 
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> snapshot) {
     return ListView.separated(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
+      separatorBuilder: (BuildContext context, int index) => Divider(
+        height: 15,
+        color: Colors.amber[800],
+      ),
       itemCount: snapshot.data!.length,
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       itemBuilder: (context, index) {
@@ -57,7 +61,7 @@ class HomeScreen extends StatelessWidget {
           id: webtoon.id,
         );
       },
-      separatorBuilder: (context, index) => const SizedBox(width: 40),
+      //separatorBuilder: (context, index) => const SizedBox(width: 40),
     );
   }
 }

@@ -44,7 +44,7 @@ class Episode extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  '${episode.title}/${episode.title}',
+                  episode.title,
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
